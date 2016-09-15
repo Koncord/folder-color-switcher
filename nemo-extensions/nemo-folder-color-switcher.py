@@ -103,6 +103,8 @@ class ChangeColorFolder(GObject.GObject, Nemo.MenuProvider):
                 self.base_theme = False
         if not self.base_theme and KNOWN_COLORS.has_key(self.theme):
             self.base_color = KNOWN_COLORS[self.theme]
+        if "Mint-Y" in self.theme:
+            self.theme = "Mint-X"
 
     def on_theme_changed(self, settings, key):
         self.get_theme()
